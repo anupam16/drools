@@ -21,8 +21,8 @@ public class DynamicClassGeneratorService {
 	private DynamicClassGeneratorRepository dynamicClassGeneratorRepository;
 	@Autowired
 	private ClassPropertyRepository classPropertyRepository;
-	@Autowired
-	private DynamicClassGenerator dynamicClassGenerator;
+	// @Autowired
+	// private DynamicClassGenerator dynamicClassGenerator;
 	private Map<String, Object> dynamicObjects = new HashMap<>();
 
 	public ClassName addClassDetails(ClassName obj) {
@@ -38,25 +38,25 @@ public class DynamicClassGeneratorService {
 		return obj;
 	}
 	
-	public Object generateDynamicClasses(Map<String, Object> dynamicObjects) {
-		List<ClassName> cnList = dynamicClassGeneratorRepository.findAll();
-		return dynamicClassGenerator.generateDynamicClass(cnList, dynamicObjects);
-	}
+	// public Object generateDynamicClasses(Map<String, Object> dynamicObjects) {
+	// 	List<ClassName> cnList = dynamicClassGeneratorRepository.findAll();
+	// 	return dynamicClassGenerator.generateDynamicClass(cnList, dynamicObjects);
+	// }
 	
 	
-	public void generateDynamicClassGlobal()
-			throws JsonProcessingException, IllegalArgumentException, IllegalAccessException {
-		Object obj = generateDynamicClasses(dynamicObjects);
-		Class<?> dynamicClass = obj.getClass();
-		Field[] fields = dynamicClass.getDeclaredFields();
+	// public void generateDynamicClassGlobal()
+	// 		throws JsonProcessingException, IllegalArgumentException, IllegalAccessException {
+	// 	Object obj = generateDynamicClasses(dynamicObjects);
+	// 	Class<?> dynamicClass = obj.getClass();
+	// 	Field[] fields = dynamicClass.getDeclaredFields();
 
-		for (Field field : fields) {
-			field.setAccessible(true); // Make the field accessible (even if it's private)
-			String fieldName = field.getName();
-			Object fieldValue = field.get(obj); // Get the field value for the instance
-		}
-		ObjectMapper objectMapper = new ObjectMapper();
-		String json = objectMapper.writeValueAsString(obj);
-	}
+	// 	for (Field field : fields) {
+	// 		field.setAccessible(true); // Make the field accessible (even if it's private)
+	// 		String fieldName = field.getName();
+	// 		Object fieldValue = field.get(obj); // Get the field value for the instance
+	// 	}
+	// 	ObjectMapper objectMapper = new ObjectMapper();
+	// 	String json = objectMapper.writeValueAsString(obj);
+	// }
 
 }

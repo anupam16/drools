@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.0</version>
+        <version>3.1.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.droolsproject</groupId>
@@ -65,9 +65,9 @@
 
 <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 <dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-core</artifactId>
-    <version>5.1.17.Final</version>
+   <groupId>org.hibernate</groupId>
+   <artifactId>hibernate-core</artifactId>
+   <version>3.6.10.Final</version>
 </dependency>
 
     <!-- Hibernate Dependencies -->
@@ -116,7 +116,13 @@
     <groupId>jakarta.persistence</groupId>
     <artifactId>jakarta.persistence-api</artifactId>
 </dependency>
-
+<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.6.0</version>
+</dependency>
 </dependencies>
 
 

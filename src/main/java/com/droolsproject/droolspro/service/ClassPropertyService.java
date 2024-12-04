@@ -11,8 +11,8 @@ import com.droolsproject.droolspro.repository.ClassNameRepository;
 
 @Service
 public class ClassPropertyService {
-	@Autowired
-	private ClassPropertyRepository classPropertyRepository;
+	// @Autowired
+	// private ClassPropertyRepository classPropertyRepository;
 
 	@Autowired
 	private ClassNameRepository classNameRepository;
